@@ -6,17 +6,60 @@ using System.Windows.Forms;
 
 namespace HLO
 {
-    internal static class Program
+    static void main(string[]args)
     {
-        /// <summary>
-        /// Point d'entrée principal de l'application.
-        /// </summary>
-        [STAThread]
-        static void Main()
+        public class HLO
+    {
+        public static bool Prime(int nb)
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            if (nb < 3)
+            {
+                return true;
+            }
+            else
+            {
+
+                for (int i = 2; i <= nb; i++)
+                {
+                    if (nb % i == 0)
+                    {
+
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        public static void Main(string[] args)
+        {
+
+            int nb = 0;
+            do
+            {
+                Console.WriteLine("entrer un nombre :");
+
+            } while (int.TryParse(Console.ReadLine(), out nb));
+
+            if (Prime(1))
+            {
+                Console.WriteLine("premier");
+            }
+            else
+            {
+                Console.WriteLine("Pas premier");
+            }
+
         }
     }
+}
+       
+        }
+    }
+
+
 }
